@@ -64,7 +64,7 @@ sample_predict = reg2.predict([X])
 print("The response value for the given sample feature values are : {}".format(sample_predict))
 
 
-# In[10]:
+# In[13]:
 
 
 from mpl_toolkits.mplot3d import axes3d
@@ -74,8 +74,8 @@ ax = fig.add_subplot(111, projection='3d')
 X= df_test2_features.iloc[:,0].tolist() 
 Y= df_test2_features.iloc[:,1].tolist()
 Z= df_test2_response[:].tolist()
-x_surf = np.arange(0, 500, 20)                # generate a mesh
-y_surf = np.arange(0,100, 4)
+x_surf = np.arange(df_test2_features.iloc[:,0].min(), df_test2_features.iloc[:,0].max(),20)                # generate a mesh
+y_surf = np.arange(df_test2_features.iloc[:,0].min(), df_test2_features.iloc[:,0].max(),20)
 x_surf, y_surf = np.meshgrid(x_surf, y_surf)
 # print(x_surf,y_surf)
 exog = pd.DataFrame({1: x_surf.ravel(), 2: y_surf.ravel()})
